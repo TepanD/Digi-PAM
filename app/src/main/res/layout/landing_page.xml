@@ -52,12 +52,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="Disediakan Oleh:"
+                android:text="Disediakan Oleh :"
                 android:textSize="25dp"
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/digipam_text_blue" />
-
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:src="@drawable/bumn" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:src="@drawable/pam_jaya" />
         </LinearLayout>
 
     </LinearLayout>
