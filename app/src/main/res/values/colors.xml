@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="digipam_text_blue">#0076B5</color>
-    <color name="form_label">#797979</color>
+    <color name="form_label">#757575</color>
+    <color name="digipam_splashscreen">#023E8A</color>
 </resources>
