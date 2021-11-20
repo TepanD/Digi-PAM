@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp" >
-    <!--    tools:context=".MainActivity">-->
+<!-- tools:context=".MainActivity">-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,53 +47,13 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvdaftar_data"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="50dp"
-            android:background="@drawable/custom_border"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/poppins_bold"
-                android:text="No. PAM : 000000123456"
-                android:textColor="@color/digipam_text_blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Besar penggunaan (m3) :15"
-                android:textColor="@color/digipam_text_blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Alamat :Jl. Prof Dr Satrio Kav C4/9,Kuningan Timur/"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/digipam_text_blue" />
-
-            <android.widget.Button
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:background="@drawable/custom_button"
-                android:text="Details"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"
-                android:shadowColor="@color/black" />
-        </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
