@@ -102,6 +102,7 @@
             android:src="@android:drawable/ic_menu_search" />
 
         <android.widget.Button
+            android:id="@+id/btnTambah"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center"
