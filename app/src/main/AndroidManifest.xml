@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigiPAM">
         <activity
+            android:name=".DaftarDataPamActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".FormPendataanActivity"></activity>
-        <activity android:name=".LandingPageActivity"></activity>
-        <activity android:name=".LihatDataActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".FormPendataanActivity" />
+        <activity android:name=".LandingPageActivity" />
+        <activity android:name=".LihatDataActivity" />
     </application>
 
 </manifest>

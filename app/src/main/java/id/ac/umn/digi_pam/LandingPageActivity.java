@@ -27,7 +27,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToLandingPage);
             }
         });
-        btnAdd=findViewById(R.id.btnAdd);
+        btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +35,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToPendataan);
             }
         });
-        btnMenu=findViewById(R.id.btnMenu);
+        btnMenu = findViewById(R.id.btnMenu);
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

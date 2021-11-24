@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:textSize="12sp"
+            android:inputType="number"
             android:textColor="@color/black" />
 
         <TextView
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:textSize="12sp"
+            android:inputType="number"
             android:textColor="@color/black" />
 
         <TextView
@@ -66,6 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:textSize="12sp"
+            android:inputType="text"
             android:textColor="@color/black" />
 
         <TextView
@@ -73,7 +76,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label"
-            android:text="Tanggal"
+            android:text="Tanggal (dd/mm/yyyy)"
             android:textSize="12sp" />
         <EditText
             android:id="@+id/Input_Tanggal"
@@ -81,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:textSize="12sp"
+            android:inputType="date"
             android:textColor="@color/black" />
 
         <TextView
@@ -91,7 +95,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label" />
         <ImageButton
-            android:id="@+id/Insert_ImageButton"
+            android:id="@+id/imgBtnGetPhoto"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_gravity="center"

@@ -2,15 +2,15 @@ package id.ac.umn.digi_pam;
 
 public class ListPam {
     private String nomorPam;
-    private String JumlahPemakaian;
-    private String NamaAlamat;
-    private String TanggalMasuk;
+    private String jumlahPemakaian;
+    private String namaAlamat;
+    private String tanggalMasuk;
     public ListPam(){}
     public ListPam(String nomorPam, String jumlahPemakaian, String namaAlamat, String tanggalMasuk) {
         this.nomorPam = nomorPam;
-        this.JumlahPemakaian = jumlahPemakaian;
-        this.NamaAlamat = namaAlamat;
-        this.TanggalMasuk = tanggalMasuk;
+        this.jumlahPemakaian = jumlahPemakaian;
+        this.namaAlamat = namaAlamat;
+        this.tanggalMasuk = tanggalMasuk;
 
     }
 
@@ -23,26 +23,26 @@ public class ListPam {
     }
 
     public String getJumlahPemakaian() {
-        return JumlahPemakaian;
+        return jumlahPemakaian;
     }
 
     public void setJumlahPemakaian(String jumlahPemakaian) {
-        JumlahPemakaian = jumlahPemakaian;
+        jumlahPemakaian = jumlahPemakaian;
     }
 
     public String getNamaAlamat() {
-        return NamaAlamat;
+        return namaAlamat;
     }
 
     public void setNamaAlamat(String namaAlamat) {
-        NamaAlamat = namaAlamat;
+        namaAlamat = namaAlamat;
     }
 
     public String getTanggalMasuk() {
-        return TanggalMasuk;
+        return tanggalMasuk;
     }
 
     public void setTanggalMasuk(String tanggalMasuk) {
-        TanggalMasuk = tanggalMasuk;
+        tanggalMasuk = tanggalMasuk;
     }
 }
