@@ -12,4 +12,6 @@
     <color name="form_label">#757575</color>
     <color name="digipam_splashscreen">#023E8A</color>
     <color name="transparent">#0000ffff</color>
+    <color name="washed_blue">#0096C7</color>
+
 </resources>

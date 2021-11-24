@@ -22,7 +22,7 @@
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="175dp"
-            android:background="@color/teal_700"
+            android:background="@color/washed_blue"
             android:orientation="vertical">
 
             <TextView
@@ -34,7 +34,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Senin"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="42sp" />
 
             <TextView
                 android:id="@+id/datemonthyear"
@@ -44,7 +44,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="dd/mm/yyy"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

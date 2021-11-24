@@ -13,24 +13,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Form Pendataan"
             android:textColor="@color/digipam_text_blue"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:orientation="vertical" >
+            android:textSize="25sp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +34,7 @@
             android:id="@+id/Input_NoPam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textSize="12sp"
             android:textColor="@color/black" />
 
@@ -56,6 +49,7 @@
             android:id="@+id/Input_BesarPengunaan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textSize="12sp"
             android:textColor="@color/black" />
 
@@ -70,6 +64,7 @@
             android:id="@+id/Input_Alamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textSize="12sp"
             android:textColor="@color/black" />
 
@@ -84,6 +79,7 @@
             android:id="@+id/Input_Tanggal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textSize="12sp"
             android:textColor="@color/black" />
 

@@ -17,30 +17,34 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/relativeLayout"
+            android:id="@+id/lihat_data_page_linear"
             android:layout_width="match_parent"
             android:layout_height="175dp"
+            android:background="@color/washed_blue"
             android:orientation="vertical"
-            android:background="@color/teal_700" >
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
             <TextView
                 android:id="@+id/namaTanggal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Senin"
                 android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="30sp" />
+                android:textSize="42sp" />
+
             <TextView
                 android:id="@+id/datemonthyear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="dd/mm/yyy"
                 android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="12sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout

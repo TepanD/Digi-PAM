@@ -9,7 +9,9 @@
         <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/form_pendataan.xml" value="0.15625" />
         <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/landing_page.xml" value="0.15625" />
         <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/lihat_data.xml" value="0.264" />
+
         <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/post_daftar_data.xml" value="0.4" />
+
         <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/drawable/custom_border.xml" value="0.2703125" />
         <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/activity_main.xml" value="0.23731884057971014" />
         <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/daftar_data.xml" value="0.4" />
@@ -24,6 +26,15 @@
         <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/form_pendataan.xml" value="0.5" />
         <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/lihat_data.xml" value="0.2441123188405797" />
         <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/splash_screen.xml" value="0.23958333333333334" />
+
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/daftar_data.xml" value="0.2557291666666667" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/form_login.xml" value="0.25" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/form_pendataan.xml" value="0.25" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/landing_page.xml" value="0.2557291666666667" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/lihat_data.xml" value="0.2441123188405797" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/post_daftar_data.xml" value="0.38697916666666665" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/splash_screen.xml" value="0.23958333333333334" />
+        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2557291666666667" />
       </map>
     </option>
   </component>
