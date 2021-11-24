@@ -1,71 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="20dp">
     <!--    tools:context=".MainActivity">-->
 
-    <LinearLayout
+    <ImageView
+        android:layout_width="416dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/topmenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="416dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="600dp"
+        android:src="@drawable/topmenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="250dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="-80dp"
+        android:layout_marginTop="615dp"
+        android:background="@color/transparent"
+        android:src="@drawable/homebutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnMore"
+        android:layout_width="250dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/morebutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnAdd"
+        android:layout_width="233dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="615dp"
+        android:background="@color/transparent"
+        android:src="@drawable/adddata"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="233dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="615dp"
+        android:background="@color/transparent"
+        android:src="@drawable/menubutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="321dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/dateasset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints" >
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="344dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Disediakan Oleh :"
+        android:textColor="@color/digipam_text_blue"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:orientation="vertical"
-            android:background="@color/teal_700" >
-            <TextView
-                android:id="@+id/namaTanggal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:text="Senin"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="30sp" />
-            <TextView
-                android:id="@+id/datemonthyear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:text="dd/mm/yyy"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="12sp" />
-        </LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="DIGI-PAM"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_marginTop="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="Disediakan Oleh :"
-                android:textSize="25dp"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/digipam_text_blue" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="125dp"
-                android:src="@drawable/bumn" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="125dp"
-                android:src="@drawable/pam_jaya" />
-        </LinearLayout>
+    <ImageView
+        android:layout_width="259dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="500dp"
+        android:src="@drawable/bumn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="388dp"
+        android:src="@drawable/pam_jaya"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

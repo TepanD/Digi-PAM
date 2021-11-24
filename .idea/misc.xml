@@ -3,27 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/activity_main.xml" value="0.1490036231884058" />
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/daftar_data.xml" value="0.264" />
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/form_login.xml" value="0.4" />
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/form_pendataan.xml" value="0.15625" />
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/landing_page.xml" value="0.15625" />
-        <entry key="..\:/Users/bagas/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/lihat_data.xml" value="0.264" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/drawable/custom_border.xml" value="0.2703125" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/activity_main.xml" value="0.23731884057971014" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/daftar_data.xml" value="0.4" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/form_login.xml" value="0.2" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/form_pendataan.xml" value="0.1" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/landing_page.xml" value="0.24230072463768115" />
-        <entry key="..\:/Users/valou/Desktop/Digi-PAM/app/src/main/res/layout/lihat_data.xml" value="0.2" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/drawable/custom_button.xml" value="0.39947916666666666" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/font/fontfamily.xml" value="0.3265625" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/activity_main.xml" value="0.17502532928064843" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/form_login.xml" value="0.25" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/form_pendataan.xml" value="0.5" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/lihat_data.xml" value="0.2441123188405797" />
-        <entry key="..\:/sem5/MobileProgramming/LAB/AndroidStudioProjects/DigiPAM/app/src/main/res/layout/splash_screen.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/landing_page.xml" value="0.18478260869565216" />
       </map>
     </option>
   </component>

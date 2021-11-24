@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".FormPendataanActivity"></activity>
+        <activity android:name=".LandingPageActivity"></activity>
+        <activity android:name=".LihatDataActivity"></activity>
     </application>
 
 </manifest>

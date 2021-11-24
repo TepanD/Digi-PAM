@@ -1,5 +1,6 @@
 package id.ac.umn.digi_pam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            Intent GoToHomePage = new Intent(MainActivity.this, LandingPageActivity.class);
+                            startActivity(GoToHomePage);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(MainActivity.this, "Login failed, please check your username and password!!", Toast.LENGTH_SHORT).show();
