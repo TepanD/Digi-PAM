@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -20,35 +21,99 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class FormPendataanActivity extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog;
     private ImageButton imgBtnGetPhoto;
     private Bitmap photoImage;
+    private int photoImageByteCount;
+
+    private String noPam;
+    private String jumlahPemakaian;
+    private String alamat;
+    private int tanggal;
+    private int bulan;
+    private int tahun;
+
+    private String documentId;
+
+    private FirebaseFirestore db;
+    private FirebaseStorage storage;
+    private StorageReference storageRef;
+
+    private ArrayList<ListPam> returnedData;
+    private boolean isAbleToUploadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_pendataan);
 
-        EditText edit_noPam = findViewById(R.id.Input_NoPam);
-        EditText edit_Besaran = findViewById(R.id.Input_BesarPengunaan);
-        EditText edit_Alamat = findViewById(R.id.Input_Alamat);
-        EditText edit_Tanggal = findViewById(R.id.Input_Tanggal);
+        Calendar cal = Calendar.getInstance();
+        tanggal = cal.get(Calendar.DAY_OF_MONTH);
+        bulan = cal.get(Calendar.MONTH) + 1;
+        tahun = cal.get(Calendar.YEAR);
+
+        db = FirebaseFirestore.getInstance();
+        storage = FirebaseStorage.getInstance();
+        storageRef = storage.getReference();
+
+        returnedData = new ArrayList<>();
+        db.collection("dataPam")
+            .whereEqualTo("bulan", bulan)
+            .whereEqualTo("tahun", tahun)
+            .get()
+            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document: task.getResult()) {
+                            ListPam listPam = document.toObject(ListPam.class);
+                            returnedData.add(listPam);
+                        }
+//                        Log.d("DEBUG", "Jumlah data di " +
+//                                "returnedData = " + returnedData.size());
+                        isAbleToUploadData = true;
+                    }
+                    else {
+                        isAbleToUploadData = false;
+                        Toast.makeText(FormPendataanActivity.this
+                            , "Terjadi kesalahan! Silahkan reset" +
+                                "aplikasi."
+                            , Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
+//        Log.d("DEBUG", "tanggal = " + tanggal);
+//        Log.d("DEBUG", "bulan = " + bulan);
+//        Log.d("DEBUG", "tahun = " + tahun);
+
+        photoImage = null;
+
+        TextView tvTanggalSaatIni = findViewById(R.id.tvTanggalSaatIni);
+        tvTanggalSaatIni.setText(tanggal + "/" + bulan + "/" + tahun);
+
+        EditText edit_noPam = findViewById(R.id.etInputNomorPam);
+        EditText edit_Besaran = findViewById(R.id.etInputJumlahPemakaian);
+        EditText edit_Alamat = findViewById(R.id.etInputAlamat);
         Button btn = findViewById(R.id.btnTambah);
 
         imgBtnGetPhoto = findViewById(R.id.imgBtnGetPhoto);
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
 
         // Pengganti StartActivityForResult:
         ActivityResultLauncher<Intent> photoCaptureLauncher
@@ -64,6 +129,11 @@ public class FormPendataanActivity extends AppCompatActivity {
                                 Bundle extras = resultIntent.getExtras();
                                 photoImage = (Bitmap) extras.get("data");
                                 imgBtnGetPhoto.setImageBitmap(photoImage);
+
+                                photoImageByteCount
+                                        = photoImage.getByteCount();
+                                Log.d("DEBUG", "Bitmap Size = "
+                                    + photoImageByteCount);
                             }
                         }
                     }
@@ -81,40 +151,150 @@ public class FormPendataanActivity extends AppCompatActivity {
         });
 
         btn.setOnClickListener(view -> {
+            noPam = edit_noPam.getText().toString().trim();
+            jumlahPemakaian = edit_Besaran.getText().toString().trim();
+            alamat = edit_Alamat.getText().toString().trim();
+            ListPam pam = new ListPam(noPam, jumlahPemakaian, alamat
+                , tanggal, bulan, tahun);
 
-            String noPam = edit_noPam.getText().toString();
-            String jumlahPemakaian = edit_Besaran.getText().toString();
-            String alamat = edit_Alamat.getText().toString();
-            String tanggal = edit_Tanggal.getText().toString();
-            ListPam pam = new ListPam(noPam, jumlahPemakaian, alamat, tanggal);
+            Log.d("Input Form", "noPam: " + noPam);
+            Log.d("Input Form", "jumlahPemakaian: "
+                + jumlahPemakaian);
+            Log.d("Input Form", "alamat: " + alamat);
+            Log.d("Input Form", "tanggal: " + tanggal);
 
-            Log.d("Input Form: ", "noPam: " + noPam);
-            Log.d("Input Form: ", "jumlahPemakaian: " + jumlahPemakaian);
-            Log.d("Input Form: ", "alamat: " + alamat);
-            Log.d("Input Form: ", "tanggal: " + tanggal);
+            if (validateInput() && isAbleToUploadData) {
+                documentId = tahun + "-" + bulan
+                    + "-" + noPam;
 
-//            db.collection("dataPam")
-//                .add(pam)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        Log.d("Form Pendataan: ", "DocumentSnapshot " +
-//                            "written with ID: " + documentReference.getId());
-//                        Toast.makeText(FormPendataanActivity.this
-//                            , "Add Pendataan Sukses!"
-//                            , Toast.LENGTH_LONG).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Log.w("Form Pendataan Error: "
-//                            , "Error adding document", e);
-//                        Toast.makeText(FormPendataanActivity.this
-//                            , "Add Pendataan Gagal!"
-//                            , Toast.LENGTH_LONG).show();
-//                    }
-//                });
+                db.collection("dataPam")
+                    .document(documentId)
+                    .set(pam)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(FormPendataanActivity.this
+                                    , "Add Pendataan Sukses!"
+                                    , Toast.LENGTH_LONG).show();
+
+                            uploadPamPhotoImage();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w("Form Pendataan Error"
+                                , "Error adding document", e);
+
+                            Toast.makeText(FormPendataanActivity.this
+                                , "Add Pendataan Gagal!"
+                                , Toast.LENGTH_LONG).show();
+                        }
+                    });
+            }
+        });
+    }
+
+    private boolean validateInput()
+    {
+        // Cek apakah input kosong:
+        if (noPam.trim().isEmpty()) {
+            Toast.makeText(FormPendataanActivity.this
+                , "Input Nomor PAM harus diisi!"
+                , Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if (jumlahPemakaian.trim().isEmpty()) {
+            Toast.makeText(FormPendataanActivity.this
+                , "Input Jumlah Pemakaian harus diisi!"
+                , Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if (alamat.trim().isEmpty()) {
+            Toast.makeText(FormPendataanActivity.this
+                , "Input Alamat harus diisi!"
+                , Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if (photoImage == null) {
+            Toast.makeText(FormPendataanActivity.this
+                , "Input Foto harus diisi!"
+                , Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        // Cek apakah format input benar:
+        try {
+            Integer.parseInt(noPam);
+        }
+        catch (NumberFormatException e) {
+            Toast.makeText(FormPendataanActivity.this
+                    , "Input Nomor PAM harus berupa bilangan bulat!"
+                    , Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        try {
+            Integer.parseInt(jumlahPemakaian);
+        }
+        catch (NumberFormatException e) {
+            Toast.makeText(FormPendataanActivity.this
+                    , "Input Jumlah Pemakaian harus berupa bilangan " +
+                        "bulat!"
+                    , Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        // Cek apakah ukuran gambar terlalu besar:
+        if (photoImageByteCount > 1024000000) {
+            Toast.makeText(FormPendataanActivity.this
+                    , "Ukuran maksimal gambar = 1024 MB!"
+                    , Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        // Cek apakah data pada bulan dan tahun sekarang ini sudah ada
+        // sebelumnya:
+        for (ListPam listPam: returnedData) {
+            if (listPam.getBulan() == bulan
+                && listPam.getTahun() == tahun
+                && listPam.getNomorPam().equals(noPam)) {
+
+                Toast.makeText(FormPendataanActivity.this
+                        , "Data PAM sudah ada di database!"
+                        , Toast.LENGTH_LONG).show();
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void uploadPamPhotoImage()
+    {
+        StorageReference photoRef = storageRef.child("photos/" + documentId
+        + ".jpg");
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        photoImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        UploadTask uploadTask = photoRef.putBytes(data);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(FormPendataanActivity.this
+                    , "Upload foto gagal!"
+                    , Toast.LENGTH_LONG).show();
+            }
+        }).addOnSuccessListener(
+                new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(FormPendataanActivity.this
+                    , "Upload foto berhasil!"
+                    , Toast.LENGTH_LONG).show();
+            }
         });
     }
 }
