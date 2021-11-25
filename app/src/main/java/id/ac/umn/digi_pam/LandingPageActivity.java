@@ -20,7 +20,6 @@ public class LandingPageActivity extends AppCompatActivity {
     private ImageButton btnAdd;
     private ImageButton btnHome;
 
-    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landing_page);

@@ -28,6 +28,7 @@
         <activity android:name=".FormPendataanActivity" />
         <activity android:name=".LandingPageActivity" />
         <activity android:name=".LihatDataActivity" />
+
     </application>
 
 </manifest>
