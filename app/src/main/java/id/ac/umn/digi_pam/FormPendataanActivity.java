@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -42,6 +43,11 @@ public class FormPendataanActivity extends AppCompatActivity {
     private Bitmap photoImage;
     private int photoImageByteCount;
 
+    EditText etInputNomorPam;
+    EditText etInputJumlahPemakaian;
+    EditText etInputAlamat;
+    Button btnTambah;
+
     private String noPam;
     private String jumlahPemakaian;
     private String alamat;
@@ -55,7 +61,7 @@ public class FormPendataanActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageRef;
 
-    private ArrayList<ListPam> returnedData;
+    private ArrayList<ListPam> dataPamAlreadyInDb;
     private boolean isAbleToUploadData;
 
     @Override
@@ -72,7 +78,7 @@ public class FormPendataanActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
 
-        returnedData = new ArrayList<>();
+        dataPamAlreadyInDb = new ArrayList<>();
         db.collection("dataPam")
             .whereEqualTo("bulan", bulan)
             .whereEqualTo("tahun", tahun)
@@ -83,10 +89,10 @@ public class FormPendataanActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document: task.getResult()) {
                             ListPam listPam = document.toObject(ListPam.class);
-                            returnedData.add(listPam);
+                            dataPamAlreadyInDb.add(listPam);
                         }
 //                        Log.d("DEBUG", "Jumlah data di " +
-//                                "returnedData = " + returnedData.size());
+//                                "dataPamAlreadyInDb = " + dataPamAlreadyInDb.size());
                         isAbleToUploadData = true;
                     }
                     else {
@@ -108,10 +114,10 @@ public class FormPendataanActivity extends AppCompatActivity {
         TextView tvTanggalSaatIni = findViewById(R.id.tvTanggalSaatIni);
         tvTanggalSaatIni.setText(tanggal + "/" + bulan + "/" + tahun);
 
-        EditText edit_noPam = findViewById(R.id.etInputNomorPam);
-        EditText edit_Besaran = findViewById(R.id.etInputJumlahPemakaian);
-        EditText edit_Alamat = findViewById(R.id.etInputAlamat);
-        Button btn = findViewById(R.id.btnTambah);
+        etInputNomorPam = findViewById(R.id.etInputNomorPam);
+        etInputJumlahPemakaian = findViewById(R.id.etInputJumlahPemakaian);
+        etInputAlamat = findViewById(R.id.etInputAlamat);
+        btnTambah = findViewById(R.id.btnTambah);
 
         imgBtnGetPhoto = findViewById(R.id.imgBtnGetPhoto);
 
@@ -150,10 +156,10 @@ public class FormPendataanActivity extends AppCompatActivity {
             }
         });
 
-        btn.setOnClickListener(view -> {
-            noPam = edit_noPam.getText().toString().trim();
-            jumlahPemakaian = edit_Besaran.getText().toString().trim();
-            alamat = edit_Alamat.getText().toString().trim();
+        btnTambah.setOnClickListener(view -> {
+            noPam = etInputNomorPam.getText().toString().trim();
+            jumlahPemakaian = etInputJumlahPemakaian.getText().toString().trim();
+            alamat = etInputAlamat.getText().toString().trim();
             ListPam pam = new ListPam(noPam, jumlahPemakaian, alamat
                 , tanggal, bulan, tahun);
 
@@ -164,8 +170,8 @@ public class FormPendataanActivity extends AppCompatActivity {
             Log.d("Input Form", "tanggal: " + tanggal);
 
             if (validateInput() && isAbleToUploadData) {
-                documentId = tahun + "-" + bulan
-                    + "-" + noPam;
+                documentId = CustomDataPamIdGenerator
+                    .generateDataPamId(tahun, bulan, noPam);
 
                 db.collection("dataPam")
                     .document(documentId)
@@ -176,7 +182,7 @@ public class FormPendataanActivity extends AppCompatActivity {
                             Toast.makeText(FormPendataanActivity.this
                                     , "Add Pendataan Sukses!"
                                     , Toast.LENGTH_LONG).show();
-
+                            dataPamAlreadyInDb.add(pam);
                             uploadPamPhotoImage();
                         }
                     })
@@ -198,19 +204,19 @@ public class FormPendataanActivity extends AppCompatActivity {
     private boolean validateInput()
     {
         // Cek apakah input kosong:
-        if (noPam.trim().isEmpty()) {
+        if (noPam.isEmpty()) {
             Toast.makeText(FormPendataanActivity.this
                 , "Input Nomor PAM harus diisi!"
                 , Toast.LENGTH_LONG).show();
             return false;
         }
-        else if (jumlahPemakaian.trim().isEmpty()) {
+        else if (jumlahPemakaian.isEmpty()) {
             Toast.makeText(FormPendataanActivity.this
                 , "Input Jumlah Pemakaian harus diisi!"
                 , Toast.LENGTH_LONG).show();
             return false;
         }
-        else if (alamat.trim().isEmpty()) {
+        else if (alamat.isEmpty()) {
             Toast.makeText(FormPendataanActivity.this
                 , "Input Alamat harus diisi!"
                 , Toast.LENGTH_LONG).show();
@@ -255,7 +261,7 @@ public class FormPendataanActivity extends AppCompatActivity {
 
         // Cek apakah data pada bulan dan tahun sekarang ini sudah ada
         // sebelumnya:
-        for (ListPam listPam: returnedData) {
+        for (ListPam listPam: dataPamAlreadyInDb) {
             if (listPam.getBulan() == bulan
                 && listPam.getTahun() == tahun
                 && listPam.getNomorPam().equals(noPam)) {
@@ -294,7 +300,23 @@ public class FormPendataanActivity extends AppCompatActivity {
                 Toast.makeText(FormPendataanActivity.this
                     , "Upload foto berhasil!"
                     , Toast.LENGTH_LONG).show();
+
+                resetInput();
             }
         });
+    }
+
+    private void resetInput()
+    {
+        etInputNomorPam.setText("");
+        etInputJumlahPemakaian.setText("");
+        etInputAlamat.setText("");
+        photoImage = null;
+        photoImageByteCount = 0;
+
+        Drawable drawable = getDrawable(getResources()
+            .getIdentifier("android:drawable/ic_menu_camera"
+                , null, null));
+        imgBtnGetPhoto.setImageDrawable(drawable);
     }
 }

@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp" >
-<!--    tools:context=".MainActivity">-->
+    android:padding="20dp"
+    tools:context=".LihatDataActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/namaTanggal"
+                android:id="@+id/tvNamaHariLihatData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -37,7 +37,7 @@
                 android:textSize="42sp" />
 
             <TextView
-                android:id="@+id/datemonthyear"
+                android:id="@+id/tvDateMonthYearLihatData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -64,30 +64,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bulan"
-                android:textSize="12sp"
+                android:text="Bulan (Januari = 1 s/d Desember = 12)"
+                android:textSize="14sp"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/form_label" />
             <EditText
+                android:id="@+id/etInputBulanLihatData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="14sp"
+                android:inputType="number"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tahun"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/form_label" />
             <EditText
+                android:id="@+id/etInputTahunLihatData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="14sp"
+                android:inputType="number"
                 android:textColor="@color/black" />
 
             <android.widget.Button
+                android:id="@+id/btnSubmitLihatData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

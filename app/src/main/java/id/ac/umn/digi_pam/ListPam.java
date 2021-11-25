@@ -1,17 +1,19 @@
 package id.ac.umn.digi_pam;
 
-public class ListPam {
+import java.io.Serializable;
+
+public class ListPam implements Serializable {
     private String nomorPam;
     private String jumlahPemakaian;
-    private String namaAlamat;
+    private String alamat;
     private int tanggal;
     private int bulan;
     private int tahun;
     public ListPam(){}
-    public ListPam(String nomorPam, String jumlahPemakaian, String namaAlamat, int tanggal, int bulan, int tahun) {
+    public ListPam(String nomorPam, String jumlahPemakaian, String alamat, int tanggal, int bulan, int tahun) {
         this.nomorPam = nomorPam;
         this.jumlahPemakaian = jumlahPemakaian;
-        this.namaAlamat = namaAlamat;
+        this.alamat = alamat;
         this.tanggal = tanggal;
         this.bulan = bulan;
         this.tahun = tahun;
@@ -30,15 +32,15 @@ public class ListPam {
     }
 
     public void setJumlahPemakaian(String jumlahPemakaian) {
-        jumlahPemakaian = jumlahPemakaian;
+        this.jumlahPemakaian = jumlahPemakaian;
     }
 
-    public String getNamaAlamat() {
-        return namaAlamat;
+    public String getAlamat() {
+        return alamat;
     }
 
-    public void setNamaAlamat(String namaAlamat) {
-        namaAlamat = namaAlamat;
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
     }
 
     public int getTanggal() {

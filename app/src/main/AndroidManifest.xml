@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigiPAM">
         <activity
+            android:name=".DetailDataPamActivity"
+            android:exported="false" />
+        <activity
             android:name=".DaftarDataPamActivity"
             android:exported="false" />
         <activity
