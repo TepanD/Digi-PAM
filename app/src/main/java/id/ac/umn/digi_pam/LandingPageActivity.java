@@ -1,7 +1,9 @@
 package id.ac.umn.digi_pam;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -9,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
 import java.util.Calendar;
 
@@ -16,10 +20,15 @@ public class LandingPageActivity extends AppCompatActivity {
     private TextView tvNamaHari;
     private TextView tvDateMonthYear;
 
-    private ImageButton btnMenu;
-    private ImageButton btnMore;
-    private ImageButton btnAdd;
-    private ImageButton btnHome;
+//    private ImageButton btnMenu;
+//    private ImageButton btnMore;
+//    private ImageButton btnAdd;
+//    private ImageButton btnHome;
+
+    private AppCompatButton btnMenu;
+    private AppCompatButton btnAdd;
+    private AppCompatButton btnHome;
+
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +75,7 @@ public class LandingPageActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setImageAlpha(220);
+
+
     }
 }
