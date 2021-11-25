@@ -5,15 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="36dp"
-    android:layout_marginLeft="36dp"
-    android:layout_marginTop="25dp"
-    android:layout_marginBottom="25dp"
+
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
@@ -119,5 +120,67 @@
             android:textColor="@color/white"
             android:shadowColor="@color/black" />
     </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/digipam_text_blue"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHome"
+            android:minWidth="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_home"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdd"
+            android:minWidth="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_baseline_add_circle_outline_24"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toEndOf="@id/btnHome"
+            app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMenu"
+            android:minWidth="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_list"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="List"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package id.ac.umn.digi_pam;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -64,5 +65,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToDaftarData);
             }
         });
+
+        btnAdd.setImageAlpha(220);
     }
 }
