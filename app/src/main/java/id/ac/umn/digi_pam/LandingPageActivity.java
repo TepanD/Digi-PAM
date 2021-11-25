@@ -1,47 +1,18 @@
 package id.ac.umn.digi_pam;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
+        import android.os.Bundle;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
+        import androidx.fragment.app.Fragment;
 
-public class LandingPageActivity extends AppCompatActivity {
-    private ImageButton btnMenu;
-    private ImageButton btnMore;
-    private ImageButton btnAdd;
-    private ImageButton btnHome;
-
+public class LandingPageActivity extends Fragment {
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.landing_page);
-        getSupportActionBar().hide();
-        btnHome = findViewById(R.id.btnHome);
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent GoToLandingPage = new Intent(LandingPageActivity.this, LandingPageActivity.class);
-                startActivity(GoToLandingPage);
-            }
-        });
-        btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent GoToPendataan = new Intent(LandingPageActivity.this, FormPendataanActivity.class);
-                startActivity(GoToPendataan);
-            }
-        });
-        btnMenu = findViewById(R.id.btnMenu);
-        btnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent GoToPendataan = new Intent(LandingPageActivity.this, LihatDataActivity.class);
-                startActivity(GoToPendataan);
-            }
-        });
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.landing_page, container, false);
     }
 }
