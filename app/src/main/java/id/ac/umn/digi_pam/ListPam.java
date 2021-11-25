@@ -4,14 +4,17 @@ public class ListPam {
     private String nomorPam;
     private String jumlahPemakaian;
     private String namaAlamat;
-    private String tanggalMasuk;
+    private int tanggal;
+    private int bulan;
+    private int tahun;
     public ListPam(){}
-    public ListPam(String nomorPam, String jumlahPemakaian, String namaAlamat, String tanggalMasuk) {
+    public ListPam(String nomorPam, String jumlahPemakaian, String namaAlamat, int tanggal, int bulan, int tahun) {
         this.nomorPam = nomorPam;
         this.jumlahPemakaian = jumlahPemakaian;
         this.namaAlamat = namaAlamat;
-        this.tanggalMasuk = tanggalMasuk;
-
+        this.tanggal = tanggal;
+        this.bulan = bulan;
+        this.tahun = tahun;
     }
 
     public String getNomorPam() {
@@ -38,11 +41,27 @@ public class ListPam {
         namaAlamat = namaAlamat;
     }
 
-    public String getTanggalMasuk() {
-        return tanggalMasuk;
+    public int getTanggal() {
+        return tanggal;
     }
 
-    public void setTanggalMasuk(String tanggalMasuk) {
-        tanggalMasuk = tanggalMasuk;
+    public void setTanggal(int tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public int getBulan() {
+        return bulan;
+    }
+
+    public void setBulan(int bulan) {
+        this.bulan = bulan;
+    }
+
+    public int getTahun() {
+        return tahun;
+    }
+
+    public void setTahun(int tahun) {
+        this.tahun = tahun;
     }
 }

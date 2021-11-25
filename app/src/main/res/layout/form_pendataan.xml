@@ -29,29 +29,31 @@
             android:text="No.PAM"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label"
-            android:textSize="12sp"/>
+            android:textSize="14sp"/>
         <EditText
-            android:id="@+id/Input_NoPam"
+            android:id="@+id/etInputNomorPam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="12sp"
+            android:hint="Contoh: 00000012345"
+            android:textSize="14sp"
             android:inputType="number"
             android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Besar penggunaan (m3)"
+            android:text="Jumlah Pemakaian (m3)"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
         <EditText
-            android:id="@+id/Input_BesarPengunaan"
+            android:id="@+id/etInputJumlahPemakaian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="12sp"
+            android:hint="Contoh: 45"
+            android:textSize="14sp"
             android:inputType="number"
             android:textColor="@color/black" />
 
@@ -61,13 +63,14 @@
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label"
             android:text="Alamat"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
         <EditText
-            android:id="@+id/Input_Alamat"
+            android:id="@+id/etInputAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="12sp"
+            android:hint="Contoh: Jln. Surya Baru No. 43"
+            android:textSize="14sp"
             android:inputType="text"
             android:textColor="@color/black" />
 
@@ -77,14 +80,15 @@
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label"
             android:text="Tanggal (dd/mm/yyyy)"
-            android:textSize="12sp" />
-        <EditText
-            android:id="@+id/Input_Tanggal"
-            android:layout_width="match_parent"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tvTanggalSaatIni"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="12sp"
-            android:inputType="date"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Tanggal bulan tahun"
             android:textColor="@color/black" />
 
         <TextView
@@ -92,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="Tambahkan Gambar"
+            android:textSize="14sp"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/form_label" />
         <ImageButton
