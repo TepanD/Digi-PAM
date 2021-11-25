@@ -22,38 +22,51 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+    EditText inputEmail, inputPassword;
+    String email, password;
+    Button btnLogin;
+    private FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        setContentView(R.layout.form_login);
+        getSupportActionBar().hide();
+        mAuth = FirebaseAuth.getInstance();
+        inputEmail = findViewById(R.id.etEmailLogin);
+        inputPassword = findViewById(R.id.etPasswordLogin);
+        btnLogin = findViewById(R.id.btn_login);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cekLogin();
+            }
+        });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+    private void cekLogin() {
+        email = inputEmail.getText().toString();
+        password = inputPassword.getText().toString();
 
-                    switch (item.getItemId()){
-                        case R.id.nav_landingpage:
-                            selectedFragment = new LandingPageActivity();
-                            break;
-                        case R.id.nav_formpendataan:
-                            selectedFragment = new FormData();
-                            break;
-                        case R.id.nav_daftardata:
-                            selectedFragment = new LihatDataActivity();
-                            break;
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Toast.makeText(MainActivity.this, "Login Success"
+                                    , Toast.LENGTH_SHORT).show();
+
+                            Intent GoToHomePage = new Intent(MainActivity.this
+                                    , LandingPageActivity.class);
+
+                            startActivity(GoToHomePage);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(MainActivity.this, "Login failed, please check your username and password!!", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
-                    return true;
-                }
-
-            };
+                });
+    }
 }
