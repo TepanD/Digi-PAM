@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical">
 
     <LinearLayout
@@ -35,7 +34,7 @@
             android:id="@+id/etInputNomorPam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:hint="Contoh: 00000012345"
             android:textSize="14sp"
             android:inputType="number"
@@ -52,7 +51,7 @@
             android:id="@+id/etInputJumlahPemakaian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:hint="Contoh: 45"
             android:textSize="14sp"
             android:inputType="number"
@@ -69,7 +68,7 @@
             android:id="@+id/etInputAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:hint="Contoh: Jln. Surya Baru No. 43"
             android:textSize="14sp"
             android:inputType="text"
@@ -86,7 +85,7 @@
             android:id="@+id/tvTanggalSaatIni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
             android:fontFamily="@font/poppins_regular"
             android:textSize="14sp"
             android:text="Tanggal bulan tahun"
@@ -109,13 +108,17 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnGalery"
-            android:layout_width="180dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@drawable/button_insert_picture"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Insert From Galery"
+            android:drawableRight="@drawable/ic_baseline_insert_photo_24"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white"
+            android:backgroundTint="#303235"
+            android:text="Insert From Gallery"
             android:textSize="14sp"
-            android:textColor="@color/white"/>
+            />
 
         <android.widget.Button
             android:id="@+id/btnTambah"
@@ -123,10 +126,11 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+
             android:background="@drawable/custom_button"
             android:fontFamily="@font/poppins_bold"
             android:shadowColor="@color/black"
-            android:text="Tambahkan"
+            android:text="Tambah Data"
             android:textColor="@color/white"
             android:textSize="14sp" />
     </LinearLayout>
