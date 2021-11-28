@@ -9,14 +9,19 @@ public class ListPam implements Serializable {
     private int tanggal;
     private int bulan;
     private int tahun;
+    private String emailPenginput;
+    private String photoPath;
+
     public ListPam(){}
-    public ListPam(String nomorPam, String jumlahPemakaian, String alamat, int tanggal, int bulan, int tahun) {
+    public ListPam(String nomorPam, String jumlahPemakaian, String alamat, int tanggal, int bulan, int tahun, String emailPenginput, String photoPath) {
         this.nomorPam = nomorPam;
         this.jumlahPemakaian = jumlahPemakaian;
         this.alamat = alamat;
         this.tanggal = tanggal;
         this.bulan = bulan;
         this.tahun = tahun;
+        this.emailPenginput = emailPenginput;
+        this.photoPath = photoPath;
     }
 
     public String getNomorPam() {
@@ -65,5 +70,21 @@ public class ListPam implements Serializable {
 
     public void setTahun(int tahun) {
         this.tahun = tahun;
+    }
+
+    public String getEmailPenginput() {
+        return emailPenginput;
+    }
+
+    public void setEmailPenginput(String emailPenginput) {
+        this.emailPenginput = emailPenginput;
+    }
+
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
     }
 }
