@@ -58,6 +58,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToLandingPage);
             }
         });
+
         btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToPendataan);
             }
         });
+
         btnMenu = findViewById(R.id.btnMenu);
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override

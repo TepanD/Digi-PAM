@@ -29,6 +29,7 @@ public class LihatDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lihat_data);
+        getSupportActionBar().hide();
 
         etInputBulanLihatData = findViewById(R.id.etInputBulanLihatData);
         etInputTahunLihatData = findViewById(R.id.etInputTahunLihatData);

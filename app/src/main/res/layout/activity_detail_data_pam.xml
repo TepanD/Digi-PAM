@@ -70,9 +70,9 @@
             android:textColor="@color/form_label" />
 
         <ImageView
-            android:id="@+id/Insert_ImageButton"
+            android:id="@+id/ivDetailDataPamImg"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@android:drawable/ic_menu_search" />
 

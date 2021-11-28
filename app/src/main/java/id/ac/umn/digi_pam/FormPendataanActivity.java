@@ -68,6 +68,7 @@ public class FormPendataanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_pendataan);
+        getSupportActionBar().hide();
 
         Calendar cal = Calendar.getInstance();
         tanggal = cal.get(Calendar.DAY_OF_MONTH);

@@ -32,6 +32,7 @@ public class DaftarDataPamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_data_pam);
+        getSupportActionBar().hide();
 
         Intent intent = getIntent();
         int bulan = intent.getIntExtra("inputBulan", 0);
