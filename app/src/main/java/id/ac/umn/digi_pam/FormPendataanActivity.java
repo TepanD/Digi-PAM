@@ -169,14 +169,14 @@ public class FormPendataanActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent resultIntent = result.getData();
 
-                        if (resultIntent == null) {
-                            Toast.makeText(
-                                FormPendataanActivity.this
-                                , "Image dari kamera tidak ditemukan!"
-                                , Toast.LENGTH_LONG).show();
-
-                            return;
-                        }
+//                        if (resultIntent == null) {
+//                            Toast.makeText(
+//                                FormPendataanActivity.this
+//                                , "Image dari kamera tidak ditemukan!"
+//                                , Toast.LENGTH_LONG).show();
+//
+//                            return;
+//                        }
 
                         try {
                             File tempPhotoFile = new File(currentPhotoPath);
