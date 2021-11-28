@@ -25,10 +25,8 @@ public class LandingPageActivity extends AppCompatActivity {
 //    private ImageButton btnAdd;
 //    private ImageButton btnHome;
 
-    private AppCompatButton btnMenu;
     private AppCompatButton btnAdd;
-    private AppCompatButton btnHome;
-
+    private AppCompatButton btnMenu;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,15 +48,6 @@ public class LandingPageActivity extends AppCompatActivity {
         tvNamaHari.setText(hari + ",");
         tvDateMonthYear.setText(tanggal + " " + bulan + " " + tahun);
 
-        btnHome = findViewById(R.id.btnHome);
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent GoToLandingPage = new Intent(LandingPageActivity.this, LandingPageActivity.class);
-                startActivity(GoToLandingPage);
-            }
-        });
-
         btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +65,5 @@ public class LandingPageActivity extends AppCompatActivity {
                 startActivity(GoToDaftarData);
             }
         });
-
-
-
     }
 }

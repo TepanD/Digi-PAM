@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import java.util.Calendar;
 
@@ -25,11 +26,32 @@ public class LihatDataActivity extends AppCompatActivity {
     private int inputBulanInt;
     private int inputTahunInt;
 
+    private AppCompatButton btnHome;
+    private AppCompatButton btnAdd;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lihat_data);
         getSupportActionBar().hide();
+
+        btnHome = findViewById(R.id.btnHome);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent GoToPendataan = new Intent(LihatDataActivity.this, FormPendataanActivity.class);
+                startActivity(GoToPendataan);
+                finish();
+            }
+        });
 
         etInputBulanLihatData = findViewById(R.id.etInputBulanLihatData);
         etInputTahunLihatData = findViewById(R.id.etInputTahunLihatData);

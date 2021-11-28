@@ -21,6 +21,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -64,11 +65,32 @@ public class FormPendataanActivity extends AppCompatActivity {
     private ArrayList<ListPam> dataPamAlreadyInDb;
     private boolean isAbleToUploadData;
 
+    private AppCompatButton btnHome;
+    private AppCompatButton btnMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_pendataan);
         getSupportActionBar().hide();
+
+        btnHome = findViewById(R.id.btnHome);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnMenu = findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent GoToDaftarData = new Intent(FormPendataanActivity.this, LihatDataActivity.class);
+                startActivity(GoToDaftarData);
+                finish();
+            }
+        });
 
         Calendar cal = Calendar.getInstance();
         tanggal = cal.get(Calendar.DAY_OF_MONTH);
