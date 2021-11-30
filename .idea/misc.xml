@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UMN/Semester_5/IF_570_B_BL_Mobile_Application_Programming/Praktek/Final_Project/Digi-PAM/app/src/main/res/layout/activity_daftar_data_pam.xml" value="0.25416666666666665" />
+        <entry key="..\:/UMN/Semester_5/IF_570_B_BL_Mobile_Application_Programming/Praktek/Final_Project/Digi-PAM/app/src/main/res/layout/activity_detail_data_pam.xml" value="0.25416666666666665" />
+        <entry key="..\:/UMN/Semester_5/IF_570_B_BL_Mobile_Application_Programming/Praktek/Final_Project/Digi-PAM/app/src/main/res/layout/form_pendataan.xml" value="0.25416666666666665" />
+        <entry key="..\:/UMN/Semester_5/IF_570_B_BL_Mobile_Application_Programming/Praktek/Final_Project/Digi-PAM/app/src/main/res/layout/lihat_data.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Digi-PAM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Digi-PAM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Digi-PAM/app/src/main/res/layout/activity_main.xml" value="0.19519927536231885" />
