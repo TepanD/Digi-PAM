@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvDataPamItemNoPam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:text="No. PAM : 000000123456"
+            android:textColor="@color/digipam_text_blue"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvDataPamItemJumlahPemakaian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Jumlah pemakaian (m3) :15"
+            android:textColor="@color/digipam_text_blue"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvDataPamItemAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Alamat :Jl. Prof Dr Satrio Kav C4/9,Kuningan Timur/"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/digipam_text_blue" />
+
+        <android.widget.Button
+            android:id="@+id/btnDataPamItemDetail"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:text="Details"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:shadowColor="@color/black" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

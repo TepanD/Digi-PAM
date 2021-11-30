@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="55dp"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Form Pendataan"
+            android:textColor="@color/digipam_text_blue"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No.PAM"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/form_label"
+            android:textSize="14sp"/>
+        <EditText
+            android:id="@+id/etInputNomorPam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Contoh: 00000012345"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Pemakaian (m3)"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/form_label"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/etInputJumlahPemakaian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Contoh: 45"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/form_label"
+            android:text="Alamat"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/etInputAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Contoh: Jln. Surya Baru No. 43"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/form_label"
+            android:text="Tanggal (dd/mm/yyyy)"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tvTanggalSaatIni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Tanggal bulan tahun"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tambahkan Gambar"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/form_label" />
+        <ImageButton
+            android:id="@+id/imgBtnGetPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_camera" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGetFromGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:drawableRight="@drawable/ic_baseline_insert_photo_24"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white"
+            android:backgroundTint="#303235"
+            android:text="Insert From Gallery"
+            android:textSize="14sp"
+            />
+
+        <android.widget.Button
+            android:id="@+id/btnTambah"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/poppins_bold"
+            android:shadowColor="@color/black"
+            android:text="Tambah Data"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navbarConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/digipam_text_blue"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHome"
+            android:minWidth="80dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_home"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdd"
+            android:minWidth="80dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_baseline_add_circle_outline_24_inactive"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toEndOf="@id/btnHome"
+            app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/inactive_navbtn"
+            android:textSize="10sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMenu"
+            android:minWidth="80dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/ic_list"
+            android:backgroundTint="@color/transparent"
+            android:stateListAnimator="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="List"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975514239406",
+    "project_id": "digi-pam",
+    "storage_bucket": "digi-pam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975514239406:android:8fcf7d49e00585771e083f",
+        "android_client_info": {
+          "package_name": "id.ac.umn.digi_pam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975514239406-ocd50g4kujlmtctdvan39rasfp6agpds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD65VrpeeA2pFRm88iNjIjSGFnIs6-fxVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975514239406-ocd50g4kujlmtctdvan39rasfp6agpds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
