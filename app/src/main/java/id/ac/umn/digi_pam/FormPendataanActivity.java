@@ -208,7 +208,7 @@ public class FormPendataanActivity extends AppCompatActivity {
                                 if (photoImageByteCount > 1024 * 1024) {
                                     Toast.makeText(
                                         FormPendataanActivity.this
-                                        , "Ukuran maksimal gambar = 1024 MB!"
+                                        , "Ukuran maksimal gambar =  1 MB!"
                                         , Toast.LENGTH_LONG).show();
 
                                     photoImage = null;
@@ -304,7 +304,7 @@ public class FormPendataanActivity extends AppCompatActivity {
                                     if (photoImageByteCount > 1024 * 1024) {
                                         Toast.makeText(
                                             FormPendataanActivity.this
-                                            , "Ukuran maksimal gambar = 1024 MB!"
+                                            , "Ukuran maksimal gambar = 1 MB!"
                                             , Toast.LENGTH_LONG).show();
 
                                         photoImage = null;
@@ -451,7 +451,7 @@ public class FormPendataanActivity extends AppCompatActivity {
         // Cek apakah ukuran gambar terlalu besar:
         if (photoImageByteCount > 1024 * 1024) {
             Toast.makeText(FormPendataanActivity.this
-                    , "Ukuran maksimal gambar = 1024 MB!"
+                    , "Ukuran maksimal gambar = 1 MB!"
                     , Toast.LENGTH_LONG).show();
             return false;
         }
