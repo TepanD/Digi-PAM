@@ -41,6 +41,7 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/jumlahPemakaianLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jumlah Pemakaian (m3)"
@@ -111,14 +112,13 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/poppins_bold"
+            android:backgroundTint="#303235"
             android:drawableRight="@drawable/ic_baseline_insert_photo_24"
             android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="ambil dari gallery"
             android:textColor="@color/white"
-            android:backgroundTint="#303235"
-            android:text="Insert From Gallery"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
 
         <android.widget.Button
             android:id="@+id/btnTambah"

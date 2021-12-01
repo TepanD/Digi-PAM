@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -87,6 +88,8 @@ public class FormPendataanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_pendataan);
         getSupportActionBar().hide();
+
+        ((TextView)findViewById(R.id.jumlahPemakaianLabel)).setText(Html.fromHtml("Jumlah Pemakaian (m<sup>3</sup>)", 1));
 
         btnHome = findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {

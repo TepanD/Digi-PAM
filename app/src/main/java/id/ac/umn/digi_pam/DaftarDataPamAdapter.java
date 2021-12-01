@@ -39,8 +39,7 @@ public class DaftarDataPamAdapter extends RecyclerView.Adapter<DaftarDataPamAdap
     @Override
     public void onBindViewHolder(@NonNull PamDataViewHolder holder, int position) {
         ListPam listPam = listDataPam.get(position);
-        holder.tvDataPamItemNoPam.setText(
-            "No. PAM: " + listPam.getNomorPam());
+        holder.tvDataPamItemNoPam.setText(listPam.getNomorPam());
 
         holder.tvDataPamItemJumlahPemakaian.setText(
             "Jumlah pemakaian (m3): " + listPam.getJumlahPemakaian());
