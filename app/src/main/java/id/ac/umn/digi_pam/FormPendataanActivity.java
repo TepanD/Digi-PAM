@@ -204,8 +204,11 @@ public class FormPendataanActivity extends AppCompatActivity {
                             }
 
                             if (photoImage != null) {
-                                photoImageByteCount
-                                    = photoImage.getByteCount();
+                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                photoImage.compress(Bitmap.CompressFormat.JPEG, 80, baos);
+                                byte[] data = baos.toByteArray();
+                                photoImageByteCount = data.length;
+                                baos.close();
 
                                 // Cek apakah ukuran gambar terlalu besar:
                                 if (photoImageByteCount > 1024 * 1024) {
@@ -300,8 +303,11 @@ public class FormPendataanActivity extends AppCompatActivity {
                                 }
 
                                 if (photoImage != null) {
-                                    photoImageByteCount
-                                        = photoImage.getByteCount();
+                                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                    photoImage.compress(Bitmap.CompressFormat.JPEG, 80, baos);
+                                    byte[] data = baos.toByteArray();
+                                    photoImageByteCount = data.length;
+                                    baos.close();
 
                                     // Cek apakah ukuran gambar terlalu besar:
                                     if (photoImageByteCount > 1024 * 1024) {
@@ -482,8 +488,13 @@ public class FormPendataanActivity extends AppCompatActivity {
         + ".jpg");
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        photoImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        photoImage.compress(Bitmap.CompressFormat.JPEG, 80, baos);
         byte[] data = baos.toByteArray();
+        try {
+            baos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         UploadTask uploadTask = photoRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
