@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -65,9 +66,7 @@ public class DetailDataPamActivity extends AppCompatActivity {
                     + " " + lp.getNomorPam();
                 tvNoPam.setText(noPamText);
 
-                String jumlahPemakaianText = tvJumlahPemakaian.getText()
-                    .toString().trim() + " " + lp.getJumlahPemakaian();
-                tvJumlahPemakaian.setText(jumlahPemakaianText);
+                tvJumlahPemakaian.setText(Html.fromHtml("Jumlah Pemakaian (m<sup>3</sup>): " + lp.getJumlahPemakaian(), 1));
 
                 String alamatText = tvAlamat.getText().toString().trim()
                     + " " + lp.getAlamat();

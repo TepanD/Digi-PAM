@@ -3,6 +3,7 @@ package id.ac.umn.digi_pam;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,7 @@ public class DaftarDataPamAdapter extends RecyclerView.Adapter<DaftarDataPamAdap
         ListPam listPam = listDataPam.get(position);
         holder.tvDataPamItemNoPam.setText(listPam.getNomorPam());
 
-        holder.tvDataPamItemJumlahPemakaian.setText(
-            "Jumlah pemakaian (m3): " + listPam.getJumlahPemakaian());
+        holder.tvDataPamItemJumlahPemakaian.setText(Html.fromHtml("Jumlah Pemakaian (m<sup>3</sup>): " + listPam.getJumlahPemakaian(), 1));
 
         holder.tvDataPamItemAlamat.setText(
             "Alamat: " + listPam.getAlamat());
@@ -71,6 +71,8 @@ public class DaftarDataPamAdapter extends RecyclerView.Adapter<DaftarDataPamAdap
                 = itemView.findViewById(R.id.tvDataPamItemAlamat);
             btnDataPamItemDetail
                 = itemView.findViewById(R.id.btnDataPamItemDetail);
+
+
 
             btnDataPamItemDetail.setOnClickListener(this);
         }
